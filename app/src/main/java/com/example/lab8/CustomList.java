@@ -64,4 +64,8 @@ public class CustomList extends ArrayAdapter<City> {
             throw new UnsupportedOperationException("City was not found in the list.");
         }
     }
+
+    public int countCities() {
+        return 0;
+    }
 }
