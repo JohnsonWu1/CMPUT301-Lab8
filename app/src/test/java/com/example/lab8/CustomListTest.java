@@ -2,6 +2,7 @@ package com.example.lab8;
 
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -45,6 +46,19 @@ public class CustomListTest {
         assertTrue(list.hasCity(city));
         City city2 = new City("Regina", "Saskatchewan");
         assertFalse(list.hasCity(city2));
+    }
+
+    @Test
+    void testDelete() {
+        list = MockCityList();
+        City city = new City("Regina", "Saskatchewan");
+        list.addCity(city);
+        list.deleteCity(city);
+        assertFalse(list.hasCity(city));
+        City city2 = new City("Ottawa","Ontario");
+        assertThrows(UnsupportedOperationException.class, () -> {
+            list.deleteCity(city2);
+        });
     }
 
 }

@@ -56,4 +56,12 @@ public class CustomList extends ArrayAdapter<City> {
     public boolean hasCity(City city) {
         return this.cities.contains(city);
     }
+
+    public void deleteCity(City city) {
+        if (hasCity(city)) {
+
+        } else {
+            throw new UnsupportedOperationException("City was not found in the list.");
+        }
+    }
 }
