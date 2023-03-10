@@ -59,7 +59,7 @@ public class CustomList extends ArrayAdapter<City> {
 
     public void deleteCity(City city) {
         if (hasCity(city)) {
-
+            this.cities.remove(city);
         } else {
             throw new UnsupportedOperationException("City was not found in the list.");
         }
